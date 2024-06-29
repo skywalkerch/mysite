@@ -176,10 +176,10 @@ social_icons:
 links_settings:
   icon: fa fa-globe
   # Available values: block | inline
-  layout: blobk
+  layout: inline
 
 links:
-  Title: http://192.227.237.19:8090/
+  SolituAlma: http://192.227.237.19:8090/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).
