@@ -47,6 +47,9 @@ importers:
       hexo-server:
         specifier: ^3.0.0
         version: 3.0.0
+      hexo-tag-hint:
+        specifier: ^0.3.1
+        version: 0.3.1
       hexo-theme-landscape:
         specifier: ^1.0.0
         version: 1.0.0
@@ -482,6 +485,9 @@ packages:
   hexo-server@3.0.0:
     resolution: {integrity: sha512-u4s0ty9Aew6jV+a9oMrXBwhrRpUQ0U8PWM/88a5aHgDru58VY81mVrxOFxs788NAsWQ8OvsJtF5m7mnXoRnSIA==}
     engines: {node: '>=12.13.0'}
+
+  hexo-tag-hint@0.3.1:
+    resolution: {integrity: sha512-6WOCeaHegJFN81tPTIT+i1qIDw2MBijq/2xPEmH2FrgDEPN12RvZm4P6DBA58A0Fhx/DxPnLYKpoIPZ5q5CNNA==}
 
   hexo-theme-landscape@1.0.0:
     resolution: {integrity: sha512-bWQJWMqQI78wWiJPQZq5pJBH20TM442ShCaHGRetuEgMraxH0OKxB3NTupJzNEkzEk8DV2yrdizkXdKN6i501A==}
@@ -1448,6 +1454,8 @@ snapshots:
       serve-static: 1.15.0
     transitivePeerDependencies:
       - supports-color
+
+  hexo-tag-hint@0.3.1: {}
 
   hexo-theme-landscape@1.0.0: {}
 
