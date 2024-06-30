@@ -9,10 +9,10 @@ abbrlink: 55889
 date: 2024-06-29 22:38:36
 ---
 
-## 引言
 
-> 最近在学习C++，需要用vcpkg来下载第三方库，众所周知vcpkg可以用`vcpkg integrate install`在visual studio中很好的集成，但是我不太喜欢visual studio的sln工程的文件结构和UI，相比之下我更喜欢在能够自由设置UI的vscode中编程。于是乎就需要cmake工程中引入vcpkg。
+最近在学习C++，需要用vcpkg来下载第三方库，众所周知vcpkg可以用`vcpkg integrate install`在visual studio中很好的集成，但是我不太喜欢visual studio的sln工程的文件结构和UI，相比之下我更喜欢在更加灵活自由的vscode中编程。一般为了方便，通常在vscode使用cmake来管理C++项目，于是乎就需要cmake工程中引入vcpkg。
 
+<!--more-->
 ## cmake手动指定vcpkg工具链
 
 vcpkg的官方文档中指出在cmake项目中可以用通过
