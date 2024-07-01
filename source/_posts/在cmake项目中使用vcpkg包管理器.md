@@ -20,15 +20,16 @@ vcpkg的官方文档中指出在cmake项目中可以用通过
 cmake -B [build directory] -S . "-DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake"
 ```
 这个命令手动指定vcpkg的工具链文件
-## 在vscode中结合cmake-tools插件设置
 
->vscode的cmake-tools插件能自动完成很多cmake项目的操作，例如设置编译器、编译、运行，打包、测试等功能。
+## 在vscode中使用插件
 
-首先在vscode中针对workspace来定义设置
-![](../resources/%E5%9C%A8cmake%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8vcpkg%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/cmake-1719672271704-1.png)
-在这里添加`-DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg`。之后vscode每次保存CmakeLists.txt都会自动带上这个编译参数。
+vscode中有个名为`Vcpkg CMake Tools`的插件可以自动将本地的vcpkg与cmake项目相结合。
 
-## CmakeLists.txt中引入第三方库
+![](../resources/%E5%9C%A8cmake%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8vcpkg%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8/Snipaste_2024-07-01_23-30-39.png)
+
+安装完此插件后，插件会让你手动指定本地vcpkg的安装目录。
+
+##CmakeLists.txt中引入第三方库
 
 cmake在集成vcpkg后引入vcpkg下载的第三方库很简单，只需要两条命令即可。以fmt库为例
 
