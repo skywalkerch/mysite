@@ -4,7 +4,7 @@ tags:
   - C++
   - cmake
 categories:
-  - C++
+  - 编程
 abbrlink: 55889
 date: 2024-06-29 22:38:36
 ---

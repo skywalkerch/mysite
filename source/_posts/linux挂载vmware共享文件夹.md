@@ -4,7 +4,7 @@ tags:
   - 虚拟化
   - linux
 categories:
-  - linux
+  - 操作系统
 abbrlink: 62603
 date: 2024-06-27 22:38:36
 ---
