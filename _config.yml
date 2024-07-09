@@ -121,3 +121,8 @@ search:
   content: true
   format: html
 
+browsersync:
+  logLevel: "warn"
+  ghostMode:
+    scroll: true
+  instanceName: "uniqueString"
