@@ -357,9 +357,9 @@ theme_color:
 # Override browsers' default behavior.
 body_scrollbar:
   # Place the scrollbar over the content.
-  overlay: false
+  overlay: true
   # Present the scrollbar even if the content is not overflowing.
-  stable: true
+  stable: false
 
 codeblock:
   # Code Highlight theme
@@ -644,11 +644,11 @@ pace:
   enable: true
   # All available colors:
   # black | blue | green | orange | pink | purple | red | silver | white | yellow
-  color: blue
+  color:  orange
   # All available themes:
   # big-counter | bounce | barber-shop | center-atom | center-circle | center-radar | center-simple
   # corner-indicator | fill-left | flat-top | flash | loading-bar | mac-osx | material | minimal
-  theme: corner-indicator
+  theme: minimal
 
 # Generate a ribbon in your website with HTML5 canvas.
 # For more information: https://github.com/hustcc/ribbon.js
@@ -879,16 +879,16 @@ local_search:
 # A button to open designated chat widget in sidebar.
 # Firstly, you need to enable and configure the chat service.
 chat:
-  enable: false
+  enable: true
   icon: fa fa-comment # Icon name in Font Awesome, set to `false` to disable icon.
 
 # Chatra is a functional, easy to use piece of chat software for websites.
 # For more information: https://chatra.com
 # Dashboard: https://app.chatra.io/settings/general
 chatra:
-  enable: false
+  enable: true
   async: true
-  id: # Visit Dashboard to get your ChatraID
+  id: iFeE7QhfxZ3rehLYX # Visit Dashboard to get your ChatraID
   #embed: # Unfinished experimental feature for developers. See: https://chatra.com/help/api/#injectto
 
 # Tidio is a powerful, all-in-one customer service tool.
