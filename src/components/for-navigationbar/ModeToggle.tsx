@@ -12,7 +12,7 @@ export default function ModeToggle() {
       variant="ghost"
       size="default"
       className="
-      hover:rounded-full
+      rounded-full
       "
       onClick={() => {
         if (theme === "light") {

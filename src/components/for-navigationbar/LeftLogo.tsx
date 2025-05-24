@@ -58,15 +58,15 @@ export default function LeftLogo() {
                     <AlertDialogTrigger asChild>
                         <Button variant='ghost' className="font-semibold tracking-wider text-lg border-0">Skywalkerch</Button>
                     </AlertDialogTrigger >
-                    <AlertDialogContent >
-                        <AlertDialogHeader className="backdrop-blur-sm">
-                            <AlertDialogTitle>可是这不是首页链接🎵!</AlertDialogTitle>
-                            <AlertDialogDescription>
+                    <AlertDialogContent className="backdrop-blur-3xl border-0 shadow-2xl ">
+                        <AlertDialogHeader >
+                            <AlertDialogTitle className="dark:text-gray-300">可是这不是首页链接🎵!</AlertDialogTitle>
+                            <AlertDialogDescription className="text-gray-950 dark:text-gray-100">
                                 这是我埋的一个雷，如果确定之后会播放音乐哦！音乐播放后，还会有另一个隐藏的按钮！
                             </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>
-                            <AlertDialogCancel>不想听歌</AlertDialogCancel>
+                            <AlertDialogCancel className="dark:bg-[#e5dfd3]">不想听歌</AlertDialogCancel>
                             <AlertDialogAction onClick={
                                 () => {
                                     if (isPlaying) {
