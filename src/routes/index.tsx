@@ -1,7 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import '../App.css'
 import { useTheme } from "@/components/custom/theme-provider";
-
+import { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
 
 
@@ -20,12 +19,34 @@ export const Route = createFileRoute('/')({
 })
 
 function HeadPicture() {
+
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      setHeight(window.innerHeight);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const picturesList = [['/pictures/head-picture.png', '/pictures/head-picture-light.jpg'], ['/pictures/wallhaven-xe5jwd_2160x3840.png', '/pictures/wallhaven-w58ywp_2383x4236.png']]
+  console.log(width, height)
+  const index = width > 1000 ? 0 : 1
   const { theme } = useTheme()
-  return <img className='fixed top-0 z-0 '
-    src={theme === 'dark' ? "/pictures/head-picture.png" : "/pictures/head-picture-light.jpg"} alt="head-picture" />
+  return (
+    <img className='fixed top-0 z-0 '
+      src={theme === 'dark' ? picturesList[index][0] : picturesList[index][1]} alt="head-picture" />
+  )
 }
 function App() {
-  // Hook
+
+
+
+
 
   return (
     <>

@@ -142,5 +142,5 @@ code {
 }
 
 .Typewriter {
-  @apply text-3xl font-bold text-center  dark:text-gray-400 text-gray-600
+  @apply lg:text-3xl text-xl font-bold text-center dark:text-gray-400 text-gray-600
 }

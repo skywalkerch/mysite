@@ -96,7 +96,7 @@ export default function MusicVisualizer() {
             ref={canvasRef}
             width={400}
             height={45}
-            className="backdrop-blur-sm  rounded-xl max-h-10/12"
+            className="lg:backdrop-blur-sm  lg:rounded-xl lg:max-h-10/12 max-[760px]:hidden lg:block "
         />
     )
 }
