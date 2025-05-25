@@ -10,18 +10,18 @@ export default function RightMenu() {
                     </Link>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
+                {/* <NavigationMenuItem>
                     <Link to="/">
                         文档
                     </Link>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
 
-
+                {/* 
                 <NavigationMenuItem>
                     <Link to="/about" >
                         关于
                     </Link>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
             </NavigationMenuList>
         </NavigationMenu>
     );

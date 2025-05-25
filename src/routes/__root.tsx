@@ -5,16 +5,27 @@ import Navigation from '@/components/for-navigationbar/Navigation'
 export const Route = createRootRoute({
   component: () => (
     <ThemeProvider>
-      <div className='min-h-screen bg-gray-200 dark:bg-gray-700'>
+      <div className=''>
         <HeadContent />
         <Navigation />
-       
-        <Outlet />
+        <div className='flex-1 '>
+          <Outlet />
+        </div>
         <Scripts />
         <TanStackRouterDevtools />
-      </div>
-    </ThemeProvider>
+      </div >
+    </ThemeProvider >
   ),
+  head: () => ({
+    meta: [
+      { name: 'description', content: 'Hello this is skywalkerch\'s site' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        title: 'Skywalkerch',
+      },
+    ],
+
+  })
 })
 
 

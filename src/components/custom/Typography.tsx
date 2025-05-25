@@ -1,88 +1,88 @@
-function TH1({ children }: { children: React.ReactNode }) {
+function TH1({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+        <h1 className={`text-center scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${className}`}>
             {children}
         </h1>
     )
 }
 
-function TH2({ children }: { children: React.ReactNode }) {
+function TH2({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        <h2 className={`text-center scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 ${className}`}>
             {children}
         </h2>
     )
 }
 
-function TH3({ children }: { children: React.ReactNode }) {
+function TH3({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
+        <h3 className={`text-center scroll-m-20 text-2xl font-semibold tracking-tight ${className}`}>
             {children}
         </h3>
     )
 }
 
-function TH4({ children }: { children: React.ReactNode }) {
+function TH4({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+        <h4 className={`text-center scroll-m-20 text-xl font-semibold tracking-tight ${className}`}>
             {children}
         </h4>
     )
 }
 
 
-function TP({ children }: { children: React.ReactNode }) {
+function TP({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
+        <p className={`indent-8 leading-7 [&:not(:first-child)]:mt-6 ${className}`}>
             {children}
         </p>
     )
 }
 
-function TBlockquote({ children }: { children: React.ReactNode }) {
+function TBlockquote({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <blockquote className="mt-6 border-l-2 pl-6 italic">
+        <blockquote className={`mt-3 mb-3 border-l-4 border-l-gray-400  italic ${className}`}>
             {children}
         </blockquote>
     )
 }
 
-function TList({ children }: { children: React.ReactNode }) {
+function TList({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+        <ul className={`my-6 ml-6 list-disc [&>li]:mt-2 ${className}`}>
             {children}
         </ul>
     )
 }
-function TInlineCode({ children }: { children: React.ReactNode }) {
+function TInlineCode({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold">
+        <code className={`relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold ${className}`}>
             {children}
         </code>
     )
 }
 
-function TLead({ children }: { children: React.ReactNode }) {
+function TLead({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <p className="text-xl text-muted-foreground">
+        <p className={`text-xl text-muted-foreground ${className}`}>
             {children}
         </p>
     )
 }
 
-function TLarge({ children }: { children: React.ReactNode }) {
-    return <div className="text-3xl font-semibold">{children}</div  >
+function TLarge({ children, className }: { children: React.ReactNode, className?: string }) {
+    return <div className={`text-3xl font-semibold ${className}`}>{children}</div  >
 }
 
-function TSmall({ children }: { children: React.ReactNode }) {
+function TSmall({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <small className="text-sm font-medium leading-none">{children}</small>
+        <small className={`text-sm font-medium leading-none ${className}`}>{children}</small>
     )
 }
 
-function TMuted({ children }: { children: React.ReactNode }) {
+function TMuted({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <p className="text-sm text-muted-foreground">{children}</p>
+        <p className={`text-sm text-muted-foreground ${className}`}>{children}</p>
     )
 }
 

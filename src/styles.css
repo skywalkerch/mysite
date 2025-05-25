@@ -133,7 +133,7 @@ code {
   }
 
   body {
-    @apply min-h-screen;
+    @apply min-h-screen bg-[#e6eff4] dark:bg-gray-500;
   }
 }
 

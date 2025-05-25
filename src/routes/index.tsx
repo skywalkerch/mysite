@@ -6,16 +6,7 @@ import Typewriter from 'typewriter-effect';
 
 export const Route = createFileRoute('/')({
   component: App,
-  head: () => ({
-    meta: [
-      { name: 'description', content: 'Hello world' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        title: 'My App',
-      },
-    ],
-
-  })
+ 
 })
 
 function HeadPicture() {
