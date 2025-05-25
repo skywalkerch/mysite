@@ -3,7 +3,17 @@ import viteReact from "@vitejs/plugin-react";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import { resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
-// https://vitejs.dev/config/
+import rehypeMathjax from "rehype-mathjax/chtml";
+import rehypeStringify from "rehype-stringify";
+import mdx from "@mdx-js/rollup";
+import remarkMdx from "remark-mdx";
+import remarkMath from "remark-math";
+import remarkRehype from "remark-rehype";
+import rehypeHighlight from "rehype-highlight";
+import rehypeCallout from "rehype-callouts";
+import rehypeTOC from "@jsdevtools/rehype-toc";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
 export default defineConfig({
   plugins: [
     TanStackRouterVite({
@@ -12,7 +22,44 @@ export default defineConfig({
       routeFileIgnorePrefix: "-",
       quoteStyle: "single",
     }),
-    viteReact(),
+    {
+      enforce: "pre",
+      ...mdx({
+        remarkPlugins: [remarkMdx, remarkMath, remarkRehype],
+        rehypePlugins: [
+          rehypeSlug,
+          rehypeAutolinkHeadings,
+          [
+            rehypeTOC,
+            {
+              headings: ["h1", "h2"], // Only include <h1> and <h2> headings in the TOC
+              cssClasses: {
+                toc: "page-outline", // Change the CSS class for the TOC
+                link: "page-link", // Change the CSS class for links in the TOC
+              },
+              nav: true, // Add a navigation element to the TOC
+            },
+          ],
+
+          [
+            rehypeMathjax,
+            {
+              chtml: {
+                fontURL:
+                  "https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2",
+              },
+            },
+          ],
+          [rehypeHighlight, {}],
+
+          [rehypeCallout, { theme: "vitepress", showIndicator: true }],
+
+          rehypeStringify,
+        ],
+        //providerImportSource: "@mdx-js/react",
+      }),
+    },
+    viteReact({ include: /\.(jsx|js|mdx|md|tsx|ts)$/ }),
     tailwindcss(),
   ],
   test: {

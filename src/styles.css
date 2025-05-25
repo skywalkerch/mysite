@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @custom-variant dark (&:where(.dark, .dark *));
+@import 'highlight.js/styles/atom-one-dark.css';
+@import 'rehype-callouts/theme/vitepress';
+@plugin "@tailwindcss/typography";
 
 body {
   margin: 0;
@@ -133,14 +136,33 @@ code {
   }
 
   body {
-    @apply min-h-screen bg-[#e6eff4] dark:bg-gray-500;
+    @apply min-h-screen dark:bg-[#222831];
   }
 }
 
 #Navigation {
-  @apply sticky top-0 m-auto h-12 z-2 rounded-full flex justify-around items-center backdrop-blur-sm
+  @apply relative h-12 z-20 flex justify-around items-center backdrop-blur-sm
 }
 
 .Typewriter {
   @apply lg:text-3xl text-xl font-bold text-center dark:text-gray-400 text-gray-600
+}
+
+.docs pre code.hljs {
+  @apply rounded-3xl m-auto
+}
+
+.docs pre {
+  @apply p-0
+}
+
+@layer typography {
+  .docs code:not(pre code) {
+    @apply bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-red-300 px-1 rounded
+  }
+
+  .docs {
+    @apply prose prose-zinc lg:prose-xl dark:prose-invert
+  }
+
 }

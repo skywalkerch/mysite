@@ -5,12 +5,12 @@ import Navigation from '@/components/for-navigationbar/Navigation'
 export const Route = createRootRoute({
   component: () => (
     <ThemeProvider>
-      <div className=''>
+      <div >
         <HeadContent />
         <Navigation />
-        <div className='flex-1 '>
+       
           <Outlet />
-        </div>
+      
         <Scripts />
         <TanStackRouterDevtools />
       </div >

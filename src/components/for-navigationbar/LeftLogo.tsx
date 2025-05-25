@@ -58,7 +58,7 @@ export default function LeftLogo() {
                     <AlertDialogTrigger asChild>
                         <Button variant='ghost' className="font-semibold tracking-wider text-lg border-0">Skywalkerch</Button>
                     </AlertDialogTrigger >
-                    <AlertDialogContent className="backdrop-blur-3xl border-0 shadow-2xl ">
+                    <AlertDialogContent className="border-0 bg-[#f5f5f5] dark:bg-[#1e1d20]">
                         <AlertDialogHeader >
                             <AlertDialogTitle className="dark:text-gray-300">可是这不是首页链接🎵!</AlertDialogTitle>
                             <AlertDialogDescription className="text-gray-950 dark:text-gray-100">

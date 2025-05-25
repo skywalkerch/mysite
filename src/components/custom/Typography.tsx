@@ -1,6 +1,8 @@
+//import ModalImage from "react-modal-image";
+//
 function TH1({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <h1 className={`text-center scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${className}`}>
+        <h1 className={`mt-2 hover:before:content-['#'] before:text-gray-500 before:mr-2 text-center scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${className}`}>
             {children}
         </h1>
     )
@@ -8,7 +10,7 @@ function TH1({ children, className }: { children: React.ReactNode, className?: s
 
 function TH2({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <h2 className={`text-center scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 ${className}`}>
+        <h2 className={`hover:before:content-['##'] before:text-gray-500 before:mr-2 text-center scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0 ${className}`}>
             {children}
         </h2>
     )
@@ -16,7 +18,7 @@ function TH2({ children, className }: { children: React.ReactNode, className?: s
 
 function TH3({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <h3 className={`text-center scroll-m-20 text-2xl font-semibold tracking-tight ${className}`}>
+        <h3 className={`hover:before:content-['###'] before:text-gray-500 before:mr-2 text-center scroll-m-20 text-2xl font-semibold tracking-tight ${className}`}>
             {children}
         </h3>
     )
@@ -24,7 +26,7 @@ function TH3({ children, className }: { children: React.ReactNode, className?: s
 
 function TH4({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
-        <h4 className={`text-center scroll-m-20 text-xl font-semibold tracking-tight ${className}`}>
+        <h4 className={`hover:before:content-['####'] before:text-gray-500 before:mr-2 text-center scroll-m-20 text-xl font-semibold tracking-tight ${className}`}>
             {children}
         </h4>
     )
@@ -86,5 +88,11 @@ function TMuted({ children, className }: { children: React.ReactNode, className?
     )
 }
 
+function TImage({ src, alt, className }: { src: string, alt: string, className?: string }) {
+    return (
+        // 
+        <img src={src} alt={alt} />
+    )
+}
 
-export { TH1, TH2, TH3, TH4, TP, TBlockquote, TList, TInlineCode, TLead, TLarge, TSmall, TMuted }
+export { TH1, TH2, TH3, TH4, TP, TBlockquote, TList, TInlineCode, TLead, TLarge, TSmall, TMuted, TImage }

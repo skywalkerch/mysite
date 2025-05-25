@@ -7,7 +7,7 @@ import { MusicContext } from "./music-context";
 export default function Navigation() {
   return (
     <MusicContext>
-      <div id='Navigation'>
+      <div id='Navigation' >
         <LeftLogo />
         <MusicVisualizer />
         <RightMenu />
