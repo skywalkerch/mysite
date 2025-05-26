@@ -91,7 +91,7 @@ function TMuted({ children, className }: { children: React.ReactNode, className?
 function TImage({ src, alt, className }: { src: string, alt: string, className?: string }) {
     return (
         // 
-        <img src={src} alt={alt} />
+        <img src={src} alt={alt} className={`${className}`} />
     )
 }
 
