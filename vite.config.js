@@ -9,6 +9,7 @@ import mdx from "@mdx-js/rollup";
 import remarkMdx from "remark-mdx";
 import remarkMath from "remark-math";
 import remarkRehype from "remark-rehype";
+import sitemapPlugin from "vite-plugin-tanstack-router-sitemap";
 import rehypeHighlight from "rehype-highlight";
 import rehypeCallout from "rehype-callouts";
 import rehypeTOC from "@jsdevtools/rehype-toc";
@@ -22,6 +23,16 @@ export default defineConfig({
       routeFileIgnorePrefix: "-",
       quoteStyle: "single",
       autoCodeSplitting: true,
+    }),
+    sitemapPlugin({
+      hostname: "https://skywalkerch.vercel.app",
+      routeTreePath: "./src/routeTree.gen.ts",
+      routes: {
+        "/": {
+          changefreq: "daily",
+          priority: 1.0,
+        },
+      },
     }),
     {
       enforce: "pre",

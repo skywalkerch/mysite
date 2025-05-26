@@ -144,6 +144,9 @@ importers:
       vite:
         specifier: ^6.1.0
         version: 6.3.5(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)
+      vite-plugin-tanstack-router-sitemap:
+        specifier: ^1.1.0
+        version: 1.1.0(vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4))
       vitest:
         specifier: ^3.0.5
         version: 3.1.4(@types/debug@4.1.12)(jiti@2.4.2)(jsdom@26.1.0)(lightningcss@1.30.1)(tsx@4.19.4)
@@ -2463,6 +2466,11 @@ packages:
     resolution: {integrity: sha512-6enNwYnpyDo4hEgytbmc6mYWHXDHYEn0D1/rw4Q+tnHUGtKTJsn8T1YkX6Q18wI5LCrS8CTYlBaiCqxOy2kvUA==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
+
+  vite-plugin-tanstack-router-sitemap@1.1.0:
+    resolution: {integrity: sha512-TrYXwRDCyiOuX7MRqJ+IhkZ419UdBsXkgyEA7hTWLx1XWLVXeOzEhLUcHwdXSd8zpTw9IBOLmcX7NHPY+Y9vcw==}
+    peerDependencies:
+      vite: ^4.0.0 || ^5.0.0
 
   vite@6.3.5:
     resolution: {integrity: sha512-cZn6NDFE7wdTpINgs++ZJ4N49W2vRp8LCKrn3Ob1kYNtOo21vfDoaV5GzBfLU4MovSAB8uNRm4jgzVQZ+mBzPQ==}
@@ -5094,6 +5102,10 @@ snapshots:
       - terser
       - tsx
       - yaml
+
+  vite-plugin-tanstack-router-sitemap@1.1.0(vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)):
+    dependencies:
+      vite: 6.3.5(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4)
 
   vite@6.3.5(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.4):
     dependencies:
