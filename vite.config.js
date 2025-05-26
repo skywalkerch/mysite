@@ -21,6 +21,7 @@ export default defineConfig({
       generatedRouteTree: "./src/routeTree.gen.ts",
       routeFileIgnorePrefix: "-",
       quoteStyle: "single",
+      autoCodeSplitting: true,
     }),
     {
       enforce: "pre",
@@ -70,6 +71,7 @@ export default defineConfig({
     alias: {
       "@": resolve(__dirname, "./src"),
       "@root": resolve(__dirname, "./"),
+      "@docs": resolve(__dirname, "./docs"),
     },
   },
 });

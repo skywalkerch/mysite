@@ -12,8 +12,8 @@ function PostComponent() {
   const [MDX, setMDX] = useState<React.ComponentType | null>(null)
   useEffect(() => {
     const loadMDX = async () => {
-      const modules = import.meta.glob('@/docs/*.mdx')
-      const moduleKey = `/src/docs/${slug}.mdx`
+      const modules = import.meta.glob('@docs/*.mdx')
+      const moduleKey = `/docs/${slug}.mdx`
       const mod = await (modules[moduleKey] as () => Promise<{ default: React.ComponentType }>)()
       setMDX(() => mod.default)
     }
