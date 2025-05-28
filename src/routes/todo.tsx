@@ -13,7 +13,7 @@ export const Route = createFileRoute("/todo")({
 function RouteComponent() {
   const navigation = useNavigate({ from: "/" });
   return (
-    <div className="m-auto  text-2xl flex-col mt-40 items-start space-x-2 justify-center max-w-60">
+    <div className="m-auto  text-2xl flex-col mt-40 items-start space-x-2 justify-center max-w-150">
       <Tooltip>
         <TooltipTrigger
           onClick={() => {
@@ -57,15 +57,15 @@ function RouteComponent() {
 
         <div>
           <Checkbox
-            checked={false}
+            checked={true}
             id="terms2"
             className="bg-white w-4 h-4 mr-4 "
           />
           <label
             htmlFor="terms2"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            className="text-sm text-indigo-400 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            文档页面添加评论功能
+            [2025 5 28]：文档页面添加评论功能(部署于vercel的waline)
           </label>
         </div>
 
@@ -79,7 +79,7 @@ function RouteComponent() {
             htmlFor="terms2"
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            文档页面添加侧边栏目录
+            [2025 5 29] 文档页面添加侧边栏目录(不太精致，凑合着用吧)
           </label>
         </div>
 
@@ -104,9 +104,9 @@ function RouteComponent() {
           />
           <label
             htmlFor="terms2"
-            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            className="text-sm text-indigo-400 font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            加入相册集功能
+            [2025 5 27]：加入gallery播放功能(模仿一个B站up的年度摄影总结)
           </label>
         </div>
       </div>

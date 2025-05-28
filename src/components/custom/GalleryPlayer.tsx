@@ -102,7 +102,7 @@ export default function GalleryPlayer({ picturesList, bgMusicPath }: { picturesL
                                 key={picturesList[currentIndex].url}
                                 src={picturesList[currentIndex].url}
                                 alt="head-picture"
-                                className={`m-auto relative bottom-15 rounded-2xl lg:max-w-[50%] max-w-[90%] shadow-lg shadow-zinc-400 h-auto object-contain transition-opacity duration-700 ease-in-out ${fadeIn ? 'opacity-100' : 'opacity-0'
+                                className={`m-auto relative bottom-15 rounded-2xl lg:max-w-[50%]  max-w-[90%] shadow-lg shadow-zinc-400 h-auto object-contain transition-opacity duration-700 ease-in-out ${fadeIn ? 'opacity-100' : 'opacity-0'
                                     }`}
                             />
                             <img alt={picturesList[currentIndex].url} src="/pictures/sonylogo.svg" className={`max-w-40 m-auto relative bottom-10 transtition ${fadeIn ? 'opacity-100' : 'opacity-0'}`} />

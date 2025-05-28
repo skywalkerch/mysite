@@ -42,17 +42,6 @@ export default defineConfig({
         rehypePlugins: [
           rehypeSlug,
           rehypeAutolinkHeadings,
-          [
-            rehypeTOC,
-            {
-              headings: ["h1", "h2"], // Only include <h1> and <h2> headings in the TOC
-              cssClasses: {
-                toc: "page-outline", // Change the CSS class for the TOC
-                link: "page-link", // Change the CSS class for links in the TOC
-              },
-              nav: true, // Add a navigation element to the TOC
-            },
-          ],
 
           [
             rehypeMathjax,
@@ -69,7 +58,7 @@ export default defineConfig({
 
           rehypeStringify,
         ],
-        //providerImportSource: "@mdx-js/react",
+        providerImportSource: "@mdx-js/react",
       }),
     },
     viteReact({ include: /\.(jsx|js|mdx|md|tsx|ts)$/ }),

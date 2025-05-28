@@ -10,18 +10,7 @@ import { MDXProvider } from '@mdx-js/react'
 
 /** @type {MDXComponents} */
 const components = {
-    h1: TH1,
-    h2: TH2,
-    h3: TH3,
-    h4: TH4,
-    p: TP,
-    blockquote: TBlockquote,
-    ul: TList,
-    ol: TList,
     img: TImage
-    //code: TInlineCode,
-    // pre:TCode
-
 }
 
 export default function CustomMDXProvider({ children }: { children: React.ReactNode }) {

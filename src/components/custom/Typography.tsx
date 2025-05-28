@@ -1,5 +1,6 @@
 //import ModalImage from "react-modal-image";
 //
+import { Image } from 'primereact/image';
 function TH1({ children, className }: { children: React.ReactNode, className?: string }) {
     return (
         <h1 className={`mt-2 hover:before:content-['#'] before:text-gray-500 before:mr-2 text-center scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${className}`}>
@@ -90,8 +91,7 @@ function TMuted({ children, className }: { children: React.ReactNode, className?
 
 function TImage({ src, alt, className }: { src: string, alt: string, className?: string }) {
     return (
-        // 
-        <img src={src} alt={alt} className={`${className}`} />
+        <Image src={src} alt={alt} width="250" preview indicatorIcon={(<i className="pi pi-search"></i>)} className={className} />
     )
 }
 

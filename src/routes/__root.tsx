@@ -22,8 +22,9 @@ function Root() {
     <ThemeProvider>
       <HeadContent />
       <div
-        className='hidden min-[1000px]:inline-block'
-      ><AnimatedCursor
+        className='max-[760px]:hidden'
+      >
+        <AnimatedCursor
           innerSize={10}
           outerSize={15}
           color='193, 11, 111'

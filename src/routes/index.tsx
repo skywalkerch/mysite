@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import { Link } from '@tanstack/react-router';
+import { Image } from 'primereact/image';
 export const Route = createFileRoute('/')({
   component: App,
 
@@ -37,6 +38,7 @@ function App() {
           autoStart: true,
           delay: 'natural',
         }} />
+       
         <p className='mt-16 mb-4 text-3xl text-[#d44375] font-bold'>近期发布</p>
         <ul className='flex flex-auto post-list text-xl'>
           <li className='flex flex-col lg:flex-row'>

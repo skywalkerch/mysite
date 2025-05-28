@@ -2,6 +2,7 @@
 @import "tw-animate-css";
 @import 'highlight.js/styles/atom-one-dark.css';
 @import 'rehype-callouts/theme/vitepress';
+@import 'primeicons/primeicons.css';
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -165,5 +166,10 @@ code {
   .docs {
     @apply prose prose-zinc lg:prose-xl dark:prose-invert
   }
+
+  .docs [data-v-app=""] {
+    @apply lg:max-w-11/12 max-w-full m-auto
+  }
+
 
 }
