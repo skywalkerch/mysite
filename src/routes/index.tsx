@@ -1,60 +1,52 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useTheme } from "@/components/custom/theme-provider";
 import { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
-
-
+import { Link } from '@tanstack/react-router';
 export const Route = createFileRoute('/')({
   component: App,
- 
+
 })
+import NewNavigation from '@/components/for-navigationbar/new-navigation';
 
-function HeadPicture() {
-
-  const [width, setWidth] = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-      setHeight(window.innerHeight);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const picturesList = [['/pictures/head-picture.png', '/pictures/head-picture-light.jpg'], ['/pictures/wallhaven-xe5jwd_2160x3840.png', '/pictures/wallhaven-w58ywp_2383x4236.png']]
-  console.log(width, height)
-  const index = width > 1000 ? 0 : 1
-  const { theme } = useTheme()
-  return (
-    <img className='fixed top-0 z-0 '
-      src={theme === 'dark' ? picturesList[index][0] : picturesList[index][1]} alt="head-picture" />
-  )
-}
 function App() {
-
-
-
-
+  const [text, setText] = useState('')
+  useEffect(() => {
+    const getHitokoto = async () => {
+      try {
+        const res = await fetch("https://v1.hitokoto.cn/?encode=json");
+        if (!res.ok) {
+          throw new Error("一言接口请求失败");
+        }
+        const data = await res.json();
+        setText(data.hitokoto);
+      }
+      catch (error) {
+        setText("永恒只是一瞬间，刚好够和你开个玩笑。")
+      }
+    }
+    getHitokoto()
+  }, [])
 
   return (
-    <>
-      <HeadPicture />
-      <div className=' z-1 relative'>
-
-        <Typewriter
-          options={{
-            strings: ['>_ [数字圣殿] 核心协议启动', '**// 警告：你已突破404次元壁 //**', '[!] 系统归属：SKYWALKERCH', '[√] 反爬虫协议：允许自由漫游'],
-            cursor: '_',
-            autoStart: true,
-            loop: true,
-            delay: 'natural',
-          }}
-
-        />
+    <div className='px-4 sm:px-12 m-auto max-w-8/12 max-[760px]:max-w-full'>
+      <div className='pt-16 flex flex-col justify-start'>
+        <NewNavigation />
+        <Typewriter options={{
+          strings: [text],
+          loop: true,
+          autoStart: true,
+          delay: 'natural',
+        }} />
+        <p className='mt-16 mb-4 text-3xl text-[#d44375] font-bold'>近期发布</p>
+        <ul className='flex flex-auto post-list text-xl'>
+          <li className='flex flex-col lg:flex-row'>
+            <span className='mr-4 '><time dateTime="2023-08-01">2023-08-01</time></span>
+            <span className='underline hover:decoration-wavy hover:decoration-[#d44375] decoration-dashed underline-offset-2'><Link to="/about">关于页面</Link></span>
+          </li>
+        </ul>
       </div>
-    </>
+    </div>
+
+
   )
 }

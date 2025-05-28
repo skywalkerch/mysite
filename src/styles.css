@@ -1,9 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@custom-variant dark (&:where(.dark, .dark *));
 @import 'highlight.js/styles/atom-one-dark.css';
 @import 'rehype-callouts/theme/vitepress';
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
 
 body {
   margin: 0;
@@ -136,7 +137,7 @@ code {
   }
 
   body {
-    @apply min-h-screen dark:bg-[#222831];
+    @apply min-h-screen bg-[#e2e0de];
   }
 }
 
@@ -145,7 +146,7 @@ code {
 }
 
 .Typewriter {
-  @apply lg:text-3xl text-xl font-bold text-center dark:text-gray-400 text-gray-600
+  @apply text-xl lg:pl-4 mt-8 text-gray-900 max-[760px]:max-w-9/12
 }
 
 .docs pre code.hljs {

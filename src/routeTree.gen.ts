@@ -11,12 +11,21 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as TodoImport } from './routes/todo'
 import { Route as AboutImport } from './routes/about'
 import { Route as DocsRouteImport } from './routes/docs/route'
 import { Route as IndexImport } from './routes/index'
+import { Route as GalleryIndexImport } from './routes/gallery/index'
+import { Route as Gallery2024Import } from './routes/gallery/2024'
 import { Route as DocsSlugImport } from './routes/docs/$slug'
 
 // Create/Update Routes
+
+const TodoRoute = TodoImport.update({
+  id: '/todo',
+  path: '/todo',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const AboutRoute = AboutImport.update({
   id: '/about',
@@ -33,6 +42,18 @@ const DocsRouteRoute = DocsRouteImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const GalleryIndexRoute = GalleryIndexImport.update({
+  id: '/gallery/',
+  path: '/gallery/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const Gallery2024Route = Gallery2024Import.update({
+  id: '/gallery/2024',
+  path: '/gallery/2024',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,12 +88,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
+    '/todo': {
+      id: '/todo'
+      path: '/todo'
+      fullPath: '/todo'
+      preLoaderRoute: typeof TodoImport
+      parentRoute: typeof rootRoute
+    }
     '/docs/$slug': {
       id: '/docs/$slug'
       path: '/$slug'
       fullPath: '/docs/$slug'
       preLoaderRoute: typeof DocsSlugImport
       parentRoute: typeof DocsRouteImport
+    }
+    '/gallery/2024': {
+      id: '/gallery/2024'
+      path: '/gallery/2024'
+      fullPath: '/gallery/2024'
+      preLoaderRoute: typeof Gallery2024Import
+      parentRoute: typeof rootRoute
+    }
+    '/gallery/': {
+      id: '/gallery/'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryIndexImport
+      parentRoute: typeof rootRoute
     }
   }
 }
@@ -95,14 +137,20 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/todo': typeof TodoRoute
   '/docs/$slug': typeof DocsSlugRoute
+  '/gallery/2024': typeof Gallery2024Route
+  '/gallery': typeof GalleryIndexRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/todo': typeof TodoRoute
   '/docs/$slug': typeof DocsSlugRoute
+  '/gallery/2024': typeof Gallery2024Route
+  '/gallery': typeof GalleryIndexRoute
 }
 
 export interface FileRoutesById {
@@ -110,15 +158,40 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteRouteWithChildren
   '/about': typeof AboutRoute
+  '/todo': typeof TodoRoute
   '/docs/$slug': typeof DocsSlugRoute
+  '/gallery/2024': typeof Gallery2024Route
+  '/gallery/': typeof GalleryIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/docs' | '/about' | '/docs/$slug'
+  fullPaths:
+    | '/'
+    | '/docs'
+    | '/about'
+    | '/todo'
+    | '/docs/$slug'
+    | '/gallery/2024'
+    | '/gallery'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/docs' | '/about' | '/docs/$slug'
-  id: '__root__' | '/' | '/docs' | '/about' | '/docs/$slug'
+  to:
+    | '/'
+    | '/docs'
+    | '/about'
+    | '/todo'
+    | '/docs/$slug'
+    | '/gallery/2024'
+    | '/gallery'
+  id:
+    | '__root__'
+    | '/'
+    | '/docs'
+    | '/about'
+    | '/todo'
+    | '/docs/$slug'
+    | '/gallery/2024'
+    | '/gallery/'
   fileRoutesById: FileRoutesById
 }
 
@@ -126,12 +199,18 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DocsRouteRoute: typeof DocsRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
+  TodoRoute: typeof TodoRoute
+  Gallery2024Route: typeof Gallery2024Route
+  GalleryIndexRoute: typeof GalleryIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DocsRouteRoute: DocsRouteRouteWithChildren,
   AboutRoute: AboutRoute,
+  TodoRoute: TodoRoute,
+  Gallery2024Route: Gallery2024Route,
+  GalleryIndexRoute: GalleryIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -146,7 +225,10 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/docs",
-        "/about"
+        "/about",
+        "/todo",
+        "/gallery/2024",
+        "/gallery/"
       ]
     },
     "/": {
@@ -161,9 +243,18 @@ export const routeTree = rootRoute
     "/about": {
       "filePath": "about.tsx"
     },
+    "/todo": {
+      "filePath": "todo.tsx"
+    },
     "/docs/$slug": {
       "filePath": "docs/$slug.tsx",
       "parent": "/docs"
+    },
+    "/gallery/2024": {
+      "filePath": "gallery/2024.tsx"
+    },
+    "/gallery/": {
+      "filePath": "gallery/index.tsx"
     }
   }
 }

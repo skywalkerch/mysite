@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { TH1, TH3, TP, TBlockquote, TList, TInlineCode } from '@/components/custom/Typography'
+import { TH1, TH3, TP, TBlockquote, TList } from '@/components/custom/Typography'
 
 export const Route = createFileRoute('/about')({
   component: RouteComponent,
