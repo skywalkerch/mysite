@@ -18,7 +18,11 @@ export default function DocsLayout() {
                     // 其他可选参数...
                     comment={true}
                     emoji={['//unpkg.com/@waline/emojis@latest/weibo']} />
+                <a href="https://skywalkerch.vercel.app/ui/register" target="_blank" rel="noopener noreferrer">
+                    注册账户
+                </a>
             </div>
+
         </CustomMDXProvider >
     )
 }
