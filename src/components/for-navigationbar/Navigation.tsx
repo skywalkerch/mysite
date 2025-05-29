@@ -14,7 +14,7 @@ export default function Navigation() {
         src="/pictures/mario.jpg"
         alt="头像"
         preview
-        pt={{ image: { className: "rounded-full w-16 h-16 " } }}
+        pt={{ image: { className: "rounded-full w-16  " } }}
       />
       <div className="ml-2 ">
         <Link className="text-3xl font-bold subpixel-antialiased" to="/">

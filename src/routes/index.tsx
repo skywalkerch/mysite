@@ -28,7 +28,7 @@ function App() {
   }, [])
 
   return (
-    <div className='px-4 sm:px-12 m-auto max-w-8/12 max-[760px]:max-w-full'>
+    <div className='px-2 sm:px-12 m-auto max-w-8/12 max-[760px]:max-w-full'>
       <div className='pt-16 flex flex-col justify-start'>
         <Navigation />
         <Typewriter options={{
