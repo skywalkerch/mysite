@@ -3,10 +3,7 @@ import { useEffect } from 'react'
 export const Route = createFileRoute('/docs/$slug')({
   component: PostComponent,
 })
-
 import { useState } from 'react'
-
-
 function PostComponent() {
   const { slug } = Route.useParams()
   const [MDX, setMDX] = useState<React.ComponentType | null>(null)
@@ -21,7 +18,7 @@ function PostComponent() {
   }, [slug])
 
   return (
-    <div className='m-auto lg:max-w-11/12 max-[760px]:max-w-full mt-10'>
+    <div className='m-auto lg:max-w-11/12 max-[760px]:max-w-11/12 mt-10'>
       {MDX ? <MDX /> : <div>Loading...</div>}
     </div>
   )

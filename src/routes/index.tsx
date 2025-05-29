@@ -37,13 +37,20 @@ function App() {
           autoStart: true,
           delay: 'natural',
         }} />
-        <p className='mt-16 mb-4 text-3xl text-[#d44375] font-bold'>近期发布</p>
-        <ul className='flex flex-auto post-list text-xl'>
-          <li className='flex flex-col lg:flex-row'>
-            <span className='mr-4 '><time dateTime="2023-08-01">2023-08-01</time></span>
-            <span className='underline hover:decoration-wavy hover:decoration-[#d44375] decoration-dashed underline-offset-2'><Link to="/about">关于页面</Link></span>
-          </li>
-        </ul>
+        <div id='publish'>
+          <p className='mt-16 mb-4 text-3xl text-[#d44375] font-bold'>近期发布</p>
+          <ol className='flex flex-col  text-xl gap-3 ml-10'>
+            <li key={1} >
+              <span className='mr-4 '><time dateTime="2023-08-01">2023-08-01</time></span>
+              <span className='underline hover:decoration-wavy hover:decoration-[#d44375] decoration-dashed underline-offset-2'><Link to="/about">关于页面关于页面关于页面关于页面关于页面关于页面关于页面</Link></span>
+            </li>
+            <li key={2} >
+              <span className='mr-4 '><time dateTime="2023-08-01">2023-08-01</time></span>
+              <span className='underline hover:decoration-wavy hover:decoration-[#d44375] decoration-dashed underline-offset-2'><Link to="/about">关于页面关于页面关于页面关于页面关于页面关于页面</Link></span>
+            </li>
+          </ol>
+        </div>
+
       </div>
     </div>
 

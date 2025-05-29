@@ -13,7 +13,6 @@ import remarkRehype from "remark-rehype";
 import sitemapPlugin from "vite-plugin-tanstack-router-sitemap";
 import rehypeHighlight from "rehype-highlight";
 import rehypeCallout from "rehype-callouts";
-import rehypeTOC from "@jsdevtools/rehype-toc";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import rehypeSlug from "rehype-slug";

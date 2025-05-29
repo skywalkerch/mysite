@@ -71,7 +71,7 @@ function RouteComponent() {
 
         <div>
           <Checkbox
-            checked={false}
+            checked={true}
             id="terms2"
             className="bg-white w-4 h-4 mr-4"
           />
@@ -79,7 +79,7 @@ function RouteComponent() {
             htmlFor="terms2"
             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
           >
-            [2025 5 29] 文档页面添加侧边栏目录(不太精致，凑合着用吧)
+            [2025 5 29] 文档页面添加抽屉侧边栏目录
           </label>
         </div>
 

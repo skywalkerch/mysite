@@ -18,7 +18,7 @@ export const Route = createFileRoute('/_single-page/about')({
 
 function RouteComponent() {
   const navigation = useNavigate({ from: "/" });
-  return <div className='m-auto max-w-7/12 relative top-10 flex flex-col  min-h-screen '>
+  return <div className='m-auto max-w-7/12 max-[760px]:max-w-11/12 relative top-10 flex flex-col  min-h-screen '>
     <Tooltip>
       <TooltipTrigger
         onClick={() => {

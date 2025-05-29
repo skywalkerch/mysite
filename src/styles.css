@@ -147,7 +147,7 @@ code {
 }
 
 .Typewriter {
-  @apply text-xl lg:pl-4  text-gray-900 max-[760px]:max-w-9/12
+  @apply text-xl lg:pl-4 text-gray-900 max-[760px]:max-w-9/12
 }
 
 .docs pre code.hljs {
@@ -164,12 +164,32 @@ code {
   }
 
   .docs {
-    @apply prose prose-zinc lg:prose-xl dark:prose-invert prose-blockquote:border-[#d44375] prose-headings:hover:before:content-['#']
+    @apply prose prose-zinc lg:prose-xl dark:prose-invert prose-blockquote:border-[#d44375] prose-headings:hover:before:content-['#'] prose-headings:max-[760px]:text-center prose-h1:text-3xl prose-h2:text-2xl prose-h1:text-pink-600 prose-h2:text-blue-500
   }
 
   .docs [data-v-app=""] {
     @apply lg:max-w-11/12 max-w-full m-auto
   }
 
+  /* 现代浏览器 */
+  .scrollable-toc::-webkit-scrollbar {
+    width: 6px;
+  }
 
+  .scrollable-toc::-webkit-scrollbar-thumb {
+    background-color: #d44375;
+    /* tailwind 的 blue-500 */
+    border-radius: 4px;
+  }
+
+  .scrollable-toc::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+}
+
+@layer publish {
+  #publish ol {
+    list-style: cjk-ideographic;
+  }
 }

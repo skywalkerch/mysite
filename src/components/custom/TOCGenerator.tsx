@@ -20,7 +20,7 @@ type TOCGeneratorProps = {
 export const TOCGenerator: React.FC<TOCGeneratorProps> = ({
     containerClassName = "space-y-2 ",
     itemClassName = "text-gray-700 hover:text-black",
-    activeItemClassName = "text-red-600 font-bold",
+    activeItemClassName = "text-pink-500 font-bold",
     subItemClassName = "ml-4   text-gray-600 hover:text-black",
     activeSubItemClassName = "  text-blue-600 font-semibold",
 }) => {
@@ -59,7 +59,7 @@ export const TOCGenerator: React.FC<TOCGeneratorProps> = ({
 
             const allSections = tocData.flatMap((item) => [item.element, ...item.children.map((c) => c.element)]);
             setSectionElements(allSections);
-        }, 1000); // 延迟 100ms 可根据需要调整
+        }, 500); 
 
         return () => clearTimeout(timer);
     }, []);
@@ -73,37 +73,39 @@ export const TOCGenerator: React.FC<TOCGeneratorProps> = ({
                 const currentId = currentElement?.id || "";
 
                 return (
-                    <nav className={containerClassName} aria-label="Table of Contents">
-                        <ul>
-                            {toc.map((item) => {
-                                const isActive = currentId === item.id || item.children.some((c) => c.id === currentId);
-                                return (
-                                    <li key={item.id}>
-                                        <a
-                                            href={`#${item.id}`}
-                                            className={`${itemClassName} ${currentId === item.id ? activeItemClassName : ""}`}
-                                        >
-                                            {item.text}
-                                        </a>
-                                        {isActive && item.children.length > 0 && (
-                                            <ul className="mt-1 space-y-1">
-                                                {item.children.map((child) => (
-                                                    <li key={child.id}>
-                                                        <a
-                                                            href={`#${child.id}`}
-                                                            className={`${subItemClassName} ${currentId === child.id ? activeSubItemClassName : ""}`}
-                                                        >
-                                                            {child.text}
-                                                        </a>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </nav>
+                    <div className="max-h-[70vh] overflow-auto pr-2 max-w-[90%] scrollable-toc"> {/* ← 加这层容器 */}
+                        <nav className={containerClassName} aria-label="Table of Contents">
+                            <ul>
+                                {toc.map((item) => {
+                                    const isActive = currentId === item.id || item.children.some((c) => c.id === currentId);
+                                    return (
+                                        <li key={item.id}>
+                                            <a
+                                                href={`#${item.id}`}
+                                                className={`${itemClassName} ${currentId === item.id ? activeItemClassName : ""}`}
+                                            >
+                                                {item.text}
+                                            </a>
+                                            {isActive && item.children.length > 0 && (
+                                                <ul className="mt-1 space-y-1">
+                                                    {item.children.map((child) => (
+                                                        <li key={child.id}>
+                                                            <a
+                                                                href={`#${child.id}`}
+                                                                className={`${subItemClassName} ${currentId === child.id ? activeSubItemClassName : ""}`}
+                                                            >
+                                                                {child.text}
+                                                            </a>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            )}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </nav>
+                    </div>
                 );
             }}
         </Scrollspy>
