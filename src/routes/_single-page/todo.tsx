@@ -13,7 +13,7 @@ export const Route = createFileRoute("/_single-page/todo")({
 function RouteComponent() {
   const navigation = useNavigate({ from: "/" });
   return (
-    <div className="m-auto  text-2xl flex-col mt-40 items-start space-x-2 justify-center max-w-150">
+    <div className="m-auto  text-2xl flex-col mt-40 items-start space-x-2 justify-center max-w-150 max-[760px]:max-w-11/12">
       <Tooltip>
         <TooltipTrigger
           onClick={() => {
