@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import { visualizer } from "rollup-plugin-visualizer";
 import viteReact from "@vitejs/plugin-react";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import { resolve } from "node:path";
@@ -18,6 +19,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 export default defineConfig({
   plugins: [
+    visualizer({ open: true }),
     TanStackRouterVite({
       routesDirectory: "./src/routes",
       generatedRouteTree: "./src/routeTree.gen.ts",

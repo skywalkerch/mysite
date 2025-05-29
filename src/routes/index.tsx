@@ -2,12 +2,11 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import { Link } from '@tanstack/react-router';
-import { Image } from 'primereact/image';
 export const Route = createFileRoute('/')({
   component: App,
 
 })
-import NewNavigation from '@/components/for-navigationbar/new-navigation';
+import Navigation from '@/components/for-navigationbar/Navigation';
 
 function App() {
   const [text, setText] = useState('')
@@ -22,7 +21,7 @@ function App() {
         setText(data.hitokoto);
       }
       catch (error) {
-        setText("永恒只是一瞬间，刚好够和你开个玩笑。")
+        setText("任何人的一生都足以书写一本传奇")
       }
     }
     getHitokoto()
@@ -31,14 +30,13 @@ function App() {
   return (
     <div className='px-4 sm:px-12 m-auto max-w-8/12 max-[760px]:max-w-full'>
       <div className='pt-16 flex flex-col justify-start'>
-        <NewNavigation />
+        <Navigation />
         <Typewriter options={{
           strings: [text],
           loop: true,
           autoStart: true,
           delay: 'natural',
         }} />
-       
         <p className='mt-16 mb-4 text-3xl text-[#d44375] font-bold'>近期发布</p>
         <ul className='flex flex-auto post-list text-xl'>
           <li className='flex flex-col lg:flex-row'>
@@ -48,7 +46,6 @@ function App() {
         </ul>
       </div>
     </div>
-
 
   )
 }

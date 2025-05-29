@@ -1,7 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { TH1, TH3, TP, TBlockquote, TList } from '@/components/custom/Typography'
-
-export const Route = createFileRoute('/about')({
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { useNavigate } from "@tanstack/react-router";
+export const Route = createFileRoute('/_single-page/about')({
   component: RouteComponent,
   head: () => ({
     meta: [
@@ -12,8 +17,21 @@ export const Route = createFileRoute('/about')({
 })
 
 function RouteComponent() {
+  const navigation = useNavigate({ from: "/" });
   return <div className='m-auto max-w-7/12 relative top-10 flex flex-col  min-h-screen '>
-    <TH1>关于本站</TH1>
+    <Tooltip>
+      <TooltipTrigger
+        onClick={() => {
+          navigation({ to: "/" });
+        }}
+      >
+        <TH1>关于本站</TH1>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>回到主页</p>
+      </TooltipContent>
+    </Tooltip>
+
     <TP> </TP>
     <TBlockquote>我是skywalkerch
       <img src="/pictures/mario.jpg" alt="" className='w-10 h-10 rounded-full inline' />

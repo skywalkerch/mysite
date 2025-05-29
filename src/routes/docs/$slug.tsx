@@ -21,7 +21,7 @@ function PostComponent() {
   }, [slug])
 
   return (
-    <div className='m-auto lg:max-w-11/12 max-[760px]:max-w-full'>
+    <div className='m-auto lg:max-w-11/12 max-[760px]:max-w-full mt-10'>
       {MDX ? <MDX /> : <div>Loading...</div>}
     </div>
   )

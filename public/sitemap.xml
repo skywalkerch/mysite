@@ -2,43 +2,49 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
       <loc>https://skywalkerch.vercel.app/</loc>
-      <lastmod>2025-05-28</lastmod>
+      <lastmod>2025-05-29</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
     </url>
   <url>
       <loc>https://skywalkerch.vercel.app/docs</loc>
-      <lastmod>2025-05-28</lastmod>
+      <lastmod>2025-05-29</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
   <url>
-      <loc>https://skywalkerch.vercel.app/about</loc>
-      <lastmod>2025-05-28</lastmod>
+      <loc>https://skywalkerch.vercel.app/_single-page/about</loc>
+      <lastmod>2025-05-29</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
   <url>
-      <loc>https://skywalkerch.vercel.app/todo</loc>
-      <lastmod>2025-05-28</lastmod>
+      <loc>https://skywalkerch.vercel.app/_single-page/constructing</loc>
+      <lastmod>2025-05-29</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  <url>
+      <loc>https://skywalkerch.vercel.app/_single-page/todo</loc>
+      <lastmod>2025-05-29</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
   <url>
       <loc>https://skywalkerch.vercel.app/docs/$slug</loc>
-      <lastmod>2025-05-28</lastmod>
+      <lastmod>2025-05-29</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
   <url>
       <loc>https://skywalkerch.vercel.app/gallery/2024</loc>
-      <lastmod>2025-05-28</lastmod>
+      <lastmod>2025-05-29</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
   <url>
       <loc>https://skywalkerch.vercel.app/gallery</loc>
-      <lastmod>2025-05-28</lastmod>
+      <lastmod>2025-05-29</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>

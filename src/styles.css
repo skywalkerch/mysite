@@ -147,7 +147,7 @@ code {
 }
 
 .Typewriter {
-  @apply text-xl lg:pl-4 mt-8 text-gray-900 max-[760px]:max-w-9/12
+  @apply text-xl lg:pl-4  text-gray-900 max-[760px]:max-w-9/12
 }
 
 .docs pre code.hljs {
@@ -160,11 +160,11 @@ code {
 
 @layer typography {
   .docs code:not(pre code) {
-    @apply bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-red-300 px-1 rounded
+    @apply bg-gray-100 dark:bg-gray-800 text-[#d44375] dark:text-red-300 px-1 rounded
   }
 
   .docs {
-    @apply prose prose-zinc lg:prose-xl dark:prose-invert
+    @apply prose prose-zinc lg:prose-xl dark:prose-invert prose-blockquote:border-[#d44375] prose-headings:hover:before:content-['#']
   }
 
   .docs [data-v-app=""] {

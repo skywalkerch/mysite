@@ -6,7 +6,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-export const Route = createFileRoute("/todo")({
+export const Route = createFileRoute("/_single-page/todo")({
   component: RouteComponent,
 });
 

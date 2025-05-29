@@ -29,7 +29,8 @@ export const TOCGenerator: React.FC<TOCGeneratorProps> = ({
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            const headers = Array.from(document.querySelectorAll("h1, h2")) as HTMLElement[];
+            const headers = Array.from(document.querySelectorAll("h1, h2"))
+                .filter(el => !el.closest("[data-v-app]")) as HTMLElement[];
             const tocData: TocItem[] = [];
             let currentParent: TocItem | null = null;
 
@@ -58,7 +59,7 @@ export const TOCGenerator: React.FC<TOCGeneratorProps> = ({
 
             const allSections = tocData.flatMap((item) => [item.element, ...item.children.map((c) => c.element)]);
             setSectionElements(allSections);
-        }, 100); // 延迟 100ms 可根据需要调整
+        }, 1000); // 延迟 100ms 可根据需要调整
 
         return () => clearTimeout(timer);
     }, []);

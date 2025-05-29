@@ -11,27 +11,16 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as TodoImport } from './routes/todo'
-import { Route as AboutImport } from './routes/about'
 import { Route as DocsRouteImport } from './routes/docs/route'
 import { Route as IndexImport } from './routes/index'
 import { Route as GalleryIndexImport } from './routes/gallery/index'
 import { Route as Gallery2024Import } from './routes/gallery/2024'
 import { Route as DocsSlugImport } from './routes/docs/$slug'
+import { Route as SinglePageTodoImport } from './routes/_single-page/todo'
+import { Route as SinglePageConstructingImport } from './routes/_single-page/constructing'
+import { Route as SinglePageAboutImport } from './routes/_single-page/about'
 
 // Create/Update Routes
-
-const TodoRoute = TodoImport.update({
-  id: '/todo',
-  path: '/todo',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const AboutRoute = AboutImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRoute,
-} as any)
 
 const DocsRouteRoute = DocsRouteImport.update({
   id: '/docs',
@@ -63,6 +52,24 @@ const DocsSlugRoute = DocsSlugImport.update({
   getParentRoute: () => DocsRouteRoute,
 } as any)
 
+const SinglePageTodoRoute = SinglePageTodoImport.update({
+  id: '/_single-page/todo',
+  path: '/todo',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SinglePageConstructingRoute = SinglePageConstructingImport.update({
+  id: '/_single-page/constructing',
+  path: '/constructing',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SinglePageAboutRoute = SinglePageAboutImport.update({
+  id: '/_single-page/about',
+  path: '/about',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -81,18 +88,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsRouteImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
+    '/_single-page/about': {
+      id: '/_single-page/about'
       path: '/about'
       fullPath: '/about'
-      preLoaderRoute: typeof AboutImport
+      preLoaderRoute: typeof SinglePageAboutImport
       parentRoute: typeof rootRoute
     }
-    '/todo': {
-      id: '/todo'
+    '/_single-page/constructing': {
+      id: '/_single-page/constructing'
+      path: '/constructing'
+      fullPath: '/constructing'
+      preLoaderRoute: typeof SinglePageConstructingImport
+      parentRoute: typeof rootRoute
+    }
+    '/_single-page/todo': {
+      id: '/_single-page/todo'
       path: '/todo'
       fullPath: '/todo'
-      preLoaderRoute: typeof TodoImport
+      preLoaderRoute: typeof SinglePageTodoImport
       parentRoute: typeof rootRoute
     }
     '/docs/$slug': {
@@ -136,8 +150,9 @@ const DocsRouteRouteWithChildren = DocsRouteRoute._addFileChildren(
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteRouteWithChildren
-  '/about': typeof AboutRoute
-  '/todo': typeof TodoRoute
+  '/about': typeof SinglePageAboutRoute
+  '/constructing': typeof SinglePageConstructingRoute
+  '/todo': typeof SinglePageTodoRoute
   '/docs/$slug': typeof DocsSlugRoute
   '/gallery/2024': typeof Gallery2024Route
   '/gallery': typeof GalleryIndexRoute
@@ -146,8 +161,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteRouteWithChildren
-  '/about': typeof AboutRoute
-  '/todo': typeof TodoRoute
+  '/about': typeof SinglePageAboutRoute
+  '/constructing': typeof SinglePageConstructingRoute
+  '/todo': typeof SinglePageTodoRoute
   '/docs/$slug': typeof DocsSlugRoute
   '/gallery/2024': typeof Gallery2024Route
   '/gallery': typeof GalleryIndexRoute
@@ -157,8 +173,9 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/docs': typeof DocsRouteRouteWithChildren
-  '/about': typeof AboutRoute
-  '/todo': typeof TodoRoute
+  '/_single-page/about': typeof SinglePageAboutRoute
+  '/_single-page/constructing': typeof SinglePageConstructingRoute
+  '/_single-page/todo': typeof SinglePageTodoRoute
   '/docs/$slug': typeof DocsSlugRoute
   '/gallery/2024': typeof Gallery2024Route
   '/gallery/': typeof GalleryIndexRoute
@@ -170,6 +187,7 @@ export interface FileRouteTypes {
     | '/'
     | '/docs'
     | '/about'
+    | '/constructing'
     | '/todo'
     | '/docs/$slug'
     | '/gallery/2024'
@@ -179,6 +197,7 @@ export interface FileRouteTypes {
     | '/'
     | '/docs'
     | '/about'
+    | '/constructing'
     | '/todo'
     | '/docs/$slug'
     | '/gallery/2024'
@@ -187,8 +206,9 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/docs'
-    | '/about'
-    | '/todo'
+    | '/_single-page/about'
+    | '/_single-page/constructing'
+    | '/_single-page/todo'
     | '/docs/$slug'
     | '/gallery/2024'
     | '/gallery/'
@@ -198,8 +218,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DocsRouteRoute: typeof DocsRouteRouteWithChildren
-  AboutRoute: typeof AboutRoute
-  TodoRoute: typeof TodoRoute
+  SinglePageAboutRoute: typeof SinglePageAboutRoute
+  SinglePageConstructingRoute: typeof SinglePageConstructingRoute
+  SinglePageTodoRoute: typeof SinglePageTodoRoute
   Gallery2024Route: typeof Gallery2024Route
   GalleryIndexRoute: typeof GalleryIndexRoute
 }
@@ -207,8 +228,9 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DocsRouteRoute: DocsRouteRouteWithChildren,
-  AboutRoute: AboutRoute,
-  TodoRoute: TodoRoute,
+  SinglePageAboutRoute: SinglePageAboutRoute,
+  SinglePageConstructingRoute: SinglePageConstructingRoute,
+  SinglePageTodoRoute: SinglePageTodoRoute,
   Gallery2024Route: Gallery2024Route,
   GalleryIndexRoute: GalleryIndexRoute,
 }
@@ -225,8 +247,9 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/docs",
-        "/about",
-        "/todo",
+        "/_single-page/about",
+        "/_single-page/constructing",
+        "/_single-page/todo",
         "/gallery/2024",
         "/gallery/"
       ]
@@ -240,11 +263,14 @@ export const routeTree = rootRoute
         "/docs/$slug"
       ]
     },
-    "/about": {
-      "filePath": "about.tsx"
+    "/_single-page/about": {
+      "filePath": "_single-page/about.tsx"
     },
-    "/todo": {
-      "filePath": "todo.tsx"
+    "/_single-page/constructing": {
+      "filePath": "_single-page/constructing.tsx"
+    },
+    "/_single-page/todo": {
+      "filePath": "_single-page/todo.tsx"
     },
     "/docs/$slug": {
       "filePath": "docs/$slug.tsx",
